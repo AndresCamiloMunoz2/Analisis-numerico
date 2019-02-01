@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+
+#define E 2.71828182845904523536
+#define Pi 3.14159265358979323846
+
+using namespace std;
+float formula(float);
+float valorX();
+
+int main() {
+    int inferior = 0, superior = 2, valor= 1;
+    float resultado;
+  
+    
+    
+    
+    
+    cout<<resultado;
+}
+/*
+float formula(float valor){
+    float resultado;
+    resultado = 2*pow(valor,2)+3*valor+1;
+    return resultado;
+}*/
+
+float valorX(float valor){
+    float resultado;
+    float valorX;
+    valorX = (-1*pow(valor,2)-1)/3;
+    return resultado;
+}

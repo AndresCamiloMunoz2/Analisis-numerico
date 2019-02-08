@@ -1,0 +1,30 @@
+# Remueve todos los objetos creados
+rm(list=ls())
+Fx <- function(x) x^2-4
+
+# Halla la raiz de Fx
+biseccion <- function(a,b) {
+  x<-seq(a,b,0.001)
+  plot(x,Fx(x),type="l",col="red")
+  abline(h=0,col="red")
+  x<-b
+  d<-(a+b)/2
+  i<-0
+  error<-abs(a-b)/2
+  while (error > 1.e-10) {
+    i<-i+1
+    if (Fx(x) == 0) break
+    if (Fx(x)*Fx(a) < 0) b <- x else {a <- x}
+    d<-x
+    x<-(a+b)/2
+    points(rbind(c(x,0)),pch=17,cex=0.7,col="black")
+    text(x,0,i,cex=0.8,col="black")
+    error<-abs(a-b)/2
+    cat("X=",x,"\tE=",error,"\n")
+  }
+  cat("Número de iteraciones:",i,"\n")
+}
+options(digits=8)
+biseccion(-3,-1)
+#options(digits=9)
+#biseccion(1,2)

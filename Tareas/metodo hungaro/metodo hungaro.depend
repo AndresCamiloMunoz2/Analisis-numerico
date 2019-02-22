@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1550814113 source:c:\users\ancam\desktop\universidad\7 semestre\analisis numerico\metodo hungaro\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+	<string.h>
+

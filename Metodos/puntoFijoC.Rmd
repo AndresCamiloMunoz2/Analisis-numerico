@@ -1,0 +1,38 @@
+#Funcion
+f <- function(x)
+{
+  return (x^2-4*x-3)
+}
+
+#a->valor sobre el que se efectua la función, b -> valor de la iteración anterior, c-> contador
+pf <- function(a,b,c)
+{
+  if(c>=1){
+    res1<-f(a)
+    res2<-f(b)
+    oper<-abs((a-b)/a)
+    cat(oper,"\n")
+    if(oper<=0.09){
+      return (b)
+    }
+    else{
+      a<-b
+      b<-3/(a-4)
+      pf(a,b,c+1)
+    }
+  }
+  b<-3/(a-4)
+  pf(a,b,c+1)
+  
+  
+  
+  
+  
+}
+
+puntof <- function(a)
+{
+  return ( pf(a,0,0) ) 
+}
+
+puntof(-0.5)

@@ -1,0 +1,45 @@
+#funcion
+funcion<-function(x)
+{
+  #fx<-x^2+x-1
+  fx=(x^4+x-3)
+  return (fx)
+}
+
+#derivada
+derivada<-function(x)
+{
+  #fd<-2x+1
+  fd=(4*x^3+1)
+  return (fd)
+}
+
+#Newton
+newton<- function(x,y,z)
+{
+  cat("\n")
+  rF<-funcion(x)
+  rD<-derivada(x)
+  cat("rF ",rF," - rD",rD,"\n");
+  
+  x1<-x-(rF/rD)
+  cat("x1 ",x1,"\n")
+
+  if(y==0){
+    y<-x1
+    newton(x1,y,z)
+  }
+  else{
+    if(z==0.0009){
+      return (round(x1,4))
+    }
+    if((x1-y)<z){
+      newton(x1,y,z/10)
+    }
+  }
+  
+}
+
+#main
+newton(-1,0,0.9);
+newton(1,0,0.9);

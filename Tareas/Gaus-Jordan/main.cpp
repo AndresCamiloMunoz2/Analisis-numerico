@@ -1,9 +1,10 @@
+
 #include <iostream>
 #include <iomanip>
 #include <math.h>
 #include <string.h>
 
-#define NUMERO 2
+#define NUMERO 4
 #define _USE_MATH_DEFINES
 
 using namespace std;
@@ -25,10 +26,11 @@ int main()
 
     //  ex    + piy = 0.5
     //  0.33x + 0.2y = 4
-    float matriz[NUMERO][NUMERO] = {{M_E,M_PI},{0.333,0.2}};
-    float resultado[NUMERO] = {(0.5),4};
+    //float matriz[NUMERO][NUMERO] = {{M_E,M_PI},{0.333,0.2}};
+    //float resultado[NUMERO] = {(0.5),4};
 
-
+    float matriz[NUMERO][NUMERO] = {{0,2,3,3},{-5,-4,1,4},{0,0,0,3},{-4,-7,-8,-9}};
+    float resultado[NUMERO] = {1,0,0,0};
 
     /*
     //  7x +  0.5y + 3z = 4
@@ -147,14 +149,12 @@ void moverFilas(float matriz[][NUMERO], float resultado[],int n1, int n2){
     float n=0, nr=0;
     for(int i=0; i<NUMERO; i++){
         n = matriz[n1][i];
-        nr = resultado[n1];
         matriz[n1][i] = matriz[n2][i];
-        resultado[n1] = resultado[n2];
         matriz[n2][i] = n;
-        resultado[n2] = nr;
-
     }
-
+    nr = resultado[n1];
+    resultado[n1] = resultado[n2];
+    resultado[n2] = nr;
 }
 
 void asignarNumerosSumarFila(int asfila, int sumFilas[]){
@@ -212,5 +212,3 @@ void sumarFila(float matriz[][NUMERO], float fila[], float resultado[], int n, i
     }
     resultado[n] = resultado[n]+(resultado[filaOriginal]*multiplicador);
 }
-
-

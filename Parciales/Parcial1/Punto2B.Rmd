@@ -19,30 +19,30 @@ newton<- function(x,y,z)
   cat("\n")
   rF<-funcion(x)
   rD<-derivada(x)
-  cat("rF ",rF," - rD",rD,"\n");
+  
   
   x1<-x-(rF/rD)
-  cat("x1 ",x1,"\n")
+  z <- abs(x1-x)/abs(x1)
 
   if(y==0){
     y<-x1
     newton(x1,y,z)
   }
   else{
-  
-  error = 10^-9
+    cat(x,"\t",x1,"\t",z,"\n")
+    error = 10^-9
     if(z<=error){
       return (round(x1,4))
     }
     if((x1-y)<z){
-      newton(x1,y,z/10)
+      newton(x1,y,z)
     }
   }
   
 }
 
 #main
-
+cat("x0","\t","x1","\t","E","\n")
 newton(-1,1,0.9);
 
 

@@ -1,0 +1,48 @@
+#funcion
+funcion<-function(x)
+{
+  fx<-tan(pi*x)
+  return (fx)
+}
+
+#derivada
+derivada<-function(x)
+{
+  fd<-(1/(cos(pi*x)^2))
+  fd<-fd*pi
+  return (fd)
+}
+
+#Newton
+newton<- function(x,y,z)
+{
+  cat("\n")
+  rF<-funcion(x)
+  rD<-derivada(x)
+  cat("rF ",rF," - rD",rD,"\n");
+  
+  x1<-x-(rF/rD)
+  cat("x1 ",x1,"\n")
+
+  if(y==0){
+    y<-x1
+    newton(x1,y,z)
+  }
+  else{
+  
+  error = 10^-9
+    if(z<=error){
+      return (round(x1,4))
+    }
+    if((x1-y)<z){
+      newton(x1,y,z/10)
+    }
+  }
+  
+}
+
+#main
+
+newton(-1,1,0.9);
+
+

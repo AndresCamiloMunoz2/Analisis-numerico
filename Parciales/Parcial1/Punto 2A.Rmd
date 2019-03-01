@@ -1,0 +1,28 @@
+f<-function(x){
+  return (tan(pi*x))
+}
+
+g<-function(x){
+  return (sin(pi*x))
+}
+
+interse<-function(x){
+  return (f(x)-g(x))
+}
+
+calcular<-function(x0,x1,E){
+  error= 99999
+  cat("x0","\t","x1","\t","E","\n")
+  sigItera<-x1-(interse(x1)*(x1-x0))/(interse(x1)-interse(x0))
+  while(error>E){
+    error=abs(x1-x0)/abs(x1)
+    x0=x1
+    x1=sigItera
+    sigF<-x1-f(x1)*(x1-x0)/(f(x1)-f(x0))
+    cat(x0,"\t",x1,"\t",error,"\n")
+  }
+}
+
+
+Error = 10^-9
+calcular(-1,2, Error)

@@ -1,0 +1,9 @@
+1a / En lo que sea, tabla que muestre el comportamiento de los metodos. Explicar porque el metodo es mejor
+
+1b -> ii /En lo que sea. Tabla de errores y explicacion de como calculo la variacion en la solucion
+
+2a / Implementacion, comentarios, advertencias
+2b -> ii / Tabla errores, comparar 
+ 
+
+b^2 = 4ac

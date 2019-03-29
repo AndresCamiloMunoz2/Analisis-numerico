@@ -96,5 +96,5 @@ which.max(errores$abs.resultado.tablaLagrange.X....tablaLagrange.Y.)
 #interpolaX
 
 
-errorDisminuido = abs(interpolaX - valorMax)
-errorDisminuido
+#errorDisminuido = abs(interpolaX - valorMax)
+#errorDisminuido
